@@ -3,6 +3,7 @@
   align-items: center;
   gap: 100px;
   height: 100%;
+  overflow: hidden;
 
   .left {
     flex: 1;
@@ -32,10 +33,69 @@
       color: white;
       border-radius: 20px;
       font-size: 14px;
+      margin-top: 20px;
+
+      &:hover{
+        background-color: white ;
+        color:#217bfe;
+      }
     }
   }
 
   .right {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+
+    .imgContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #140e2d;
+        border-radius: 50px;
+        width: 80%;
+        height: 50%;
+
+
+
+        .bot{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            animation: 3% ease-in-out infinite alternate botAnimate;
+        }
+    }
+  }
+
+  .orbital{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.05;
+    animation: 10s linear infinite rotaionalOrbit ;
+    transform-origin: center; 
   }
 }
+
+@keyframes rotaionalOrbit {
+ 0%{
+    transform: rotate(0deg);
+ }
+
+ 100%{
+    transform: rotate(60deg);
+ }
+}
+
+
+@keyframes botAnimate {
+    0%{
+       transform: scale(1) rotate(0deg);
+    }
+   
+    100%{
+       transform: scale(1.1) rotate(-5deg);
+    }
+   }
