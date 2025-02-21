@@ -36,7 +36,7 @@ const Homepage = () => {
                 typingStatus === "human1"
                   ? human1
                   : typingStatus === "human2"
-                  ? human1
+                  ? human2
                   : bot
               }
               alt=""
@@ -53,7 +53,7 @@ const Homepage = () => {
                 () => {
                   setTypingStatus("human2");
                 },
-                "Human2: What is the best way to handle biases in AI?",
+                "Human: What is the best way to handle biases in AI?",
                 2000,
                 () => {
                   setTypingStatus("bot");
